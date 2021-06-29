@@ -43,3 +43,20 @@ fadeEls.forEach(function(fadeEl, index){
     });
 });
 
+
+// 슬라이드
+new Swiper('.notice-line .swiper-container', {
+    direction: 'vertical',
+    autoplay : true,
+    loop : true
+});
+
+new Swiper('.promotion .swiper-container', {
+    slidesPerView : 3, // 한번에 보여줄 슬라이드 갯수
+    spaceBetween : 10, //슬라이드 여백
+    centeredSlides : true, // 1번이 가운데 보이기
+    loop : true, // 반복재생
+    autoplay : {
+        delay : 500  ///1000분에 1 500 = > 0.5초
+    }
+})
