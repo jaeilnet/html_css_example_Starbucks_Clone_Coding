@@ -57,6 +57,29 @@ new Swiper('.promotion .swiper-container', {
     centeredSlides : true, // 1번이 가운데 보이기
     loop : true, // 반복재생
     autoplay : {
-        delay : 500  ///1000분에 1 500 = > 0.5초
+        delay : 2000  ///1000분에 1 500 = > 0.5초
+    },
+    pagination : {
+        el : '.promotion .swiper-pagination',  //페이지 번호 요소 선택자
+        clickalbe : true  //클릭 가능 여부
+    },
+    navigation:{
+        prevEl:'.promotion swiper-prev',  // 슬라이드 이전 버튼
+        nextEl:'.promotion .swiper-next',  // 슬라이드 다음 버튼
+    }
+})
+
+const promotionEl = document.querySelector('.promotion')
+
+const promotionToggleBtn = document.querySelector('.toggle-promotion');
+
+let isHidePromotion = false;
+
+promotionToggleBtn.addEventListener('click', function() {
+    isHidePromotion = !isHidePromotion
+    if(isHidePromotion){
+        promotionEl.classList.add('hide')
+    }else{
+        promotionEl.classList.remove('hide')
     }
 })
